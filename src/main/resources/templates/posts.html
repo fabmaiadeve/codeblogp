@@ -29,7 +29,8 @@
                     <span th:text="${post.dataDeCriacaoDoPost}"></span>
 
                 </p>
-                <a href="#"><h4 class="card-title" style="font-weight: bold; color: black; padding-top: 5px;"><span th:text="${post.tituloDoPost}"></span></h4></a>
+                <a th:href="${(#mvc.url('PC#getPostDetail').arg(0, post.id)).build()}"><h4 class="card-title" style="font-weight: bold; color: black; padding-top: 5px;"><span th:text="${post.tituloDoPost}"></span></h4></a>
+                <!-- th:href="${(#mvc.url('PC#getPostDetail').arg(0, post.id)).build()}" -->
 
                 <p class="card-text"><span th:utext="${#strings.abbreviate(post.textoDoPost,400)} "></span></p>
             </div>
